@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Główna</title>
+</head>
+<body>
+
+<header>
+</header>
+<body>
+        <div class="formLogin">
+            <p th:if="${param.error}" class="error">Wrong user or password</p>
+            <form action="/login" method="post" >
+                <h3>Logowanie</h3>
+                E-mail:<br>
+                <input type="text" name="email" th:field="${user.email}" placeholder="example@example.com">
+                <br>
+                Hasło:<br>
+                <input type="password" name="password" th:field="${user.password}" placeholder="password">
+                <br><br>
+                <input type="submit" value="Zaloguj">
+            </form>
+        </div>
+
+
+        <div class="formRegister">
+            <form>
+                <h3>Rejestracja</h3>
+                Imię:<br>
+                <input type="text" name="firstName" placeholder="example@example.com">
+                <br>
+                Nazwisko:<br>
+                <input type="text" name="lastname" placeholder="password">
+                <br>
+                E-mail:<br>
+                <input type="text" name="email" placeholder="password">
+                <br>
+                Hasło:<br>
+                <input type="password" name="password" placeholder="password">
+                <br>
+                <br>
+                <input type="submit" value="Zarejestruj">
+            </form>
+        </div>
+
+</body>
+
+</body>
+</html>
