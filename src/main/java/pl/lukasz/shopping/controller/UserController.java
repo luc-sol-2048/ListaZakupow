@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.lukasz.shopping.repository.UserRepository;
 import pl.lukasz.shopping.model.User;
 
-import java.util.List;
-
 @Controller
 public class UserController {
 
@@ -17,10 +15,6 @@ public class UserController {
     private UserRepository repository;
 
 
-//        @GetMapping("/show")
-//       public List<User> show() {
-//        return repository.findAll();
-//    }
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user, Model model) {
