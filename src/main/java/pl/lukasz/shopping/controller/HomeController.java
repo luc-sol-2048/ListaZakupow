@@ -13,7 +13,7 @@ public class HomeController {
     public String all(Model model) {
         model.addAttribute("user",new User());
         return "index";
-    }
+       }
     @GetMapping("/home")
     public String userHomePage(){
         return "home";
