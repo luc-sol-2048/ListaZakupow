@@ -9,10 +9,16 @@ public class Role {
 
     @Id
     @Column(name="id_role")
-    private int role;
+    private int role =2;
     @Column(name="role_name")
-    private String roleName;
+    private String roleName = "user";
 
+    public Role(int i, String user) {
+        this.role = i;
+        this.roleName=user;
+    }
+
+    public Role(){}
 
 
     public int getRole() {
@@ -31,11 +37,4 @@ public class Role {
         this.roleName = roleName;
     }
 
-//    public Set<User> getUsers() {
-//        return users;
-//    }
-//
-//    public void setUsers(Set<User> users) {
-//        this.users = users;
-//    }
 }

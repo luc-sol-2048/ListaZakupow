@@ -26,19 +26,20 @@
 
 
         <div class="formRegister">
-            <form>
+            <form action="/user/add" method="post">
                 <h3>Rejestracja</h3>
                 Imię:<br>
-                <input type="text" name="firstName" placeholder="example@example.com">
+                <input type="text" name="firstName"  th:field="${user.name}" placeholder="name">
                 <br>
                 Nazwisko:<br>
-                <input type="text" name="lastname" placeholder="password">
+                <input type="text" name="lastname" th:field="${user.lastName}" placeholder="last name">
                 <br>
                 E-mail:<br>
-                <input type="text" name="email" placeholder="password">
+                <p th:if="${param.register}" class="error">Taki adres email już posiada konto!!!!</p>
+                <input type="email" name="email" th:field="${user.email}" placeholder="emial@email.com">
                 <br>
                 Hasło:<br>
-                <input type="password" name="password" placeholder="password">
+                <input type="password" name="password" th:field="${user.password}" placeholder="password">
                 <br>
                 <br>
                 <input type="submit" value="Zarejestruj">

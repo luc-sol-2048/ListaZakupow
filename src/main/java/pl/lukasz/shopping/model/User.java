@@ -5,25 +5,26 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_user" )
     private int idUser;
-    @NotNull
+    @NotEmpty
     @Column(name ="user_name" )
     private String name;
-    @NotNull
+    @NotEmpty
     @Column(name ="user_lastname" )
     private String lastName;
-    @NotNull
+    @NotEmpty
     @Column(name ="user_password" )
     private String password;
-    @NotNull
+    @NotEmpty
     @Column(name ="user_email" )
     private String email;
 
@@ -31,7 +32,7 @@ public class User {
     @JoinColumn(name = "id_role",nullable = false, updatable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private Role role;
+    private Role role = new Role(2,"user");
 
     public int getIdUser() {
         return idUser;
