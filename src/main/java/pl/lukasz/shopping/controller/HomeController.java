@@ -25,4 +25,12 @@ public class HomeController {
         model.addAttribute("loginError", true);
         return "index";
     }
+
+    @RequestMapping("/-register")
+    public String registerError(Model model) {
+        model.addAttribute("registerError", true);
+        return "index";
+    }
+
+
 }
